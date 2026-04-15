@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Personal Showcase Studio landing page for transforming static UI into cinematic presentations."
+  >
+  <meta name="theme-color" content="#060606">
+  <title>Personal Showcase Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="cursor-noise-layer" aria-hidden="true">
+    <div class="cursor-noise" data-cursor-noise></div>
+  </div>
+  <div class="cursor-layer" aria-hidden="true">
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-ring" data-cursor-ring></div>
+  </div>
+  <div class="page-shell">
+    <div class="ambient ambient-left" aria-hidden="true"></div>
+    <div class="ambient ambient-right" aria-hidden="true"></div>
+    <div class="ambient ambient-bottom" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Personal Showcase Studio home">
+        <span class="brand-mark">
+          <span class="brand-mark__core"></span>
+        </span>
+        <span class="brand-copy">
+          <span>PERSONAL</span>
+          <span>SHOWCASE STUDIO</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#examples">Examples</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+
+      <a class="header-cta" href="./editor.html">Get Started</a>
+    </header>
+
+    <main>
+      <section class="hero" id="features">
+        <div class="floating-scene" aria-hidden="true">
+          <span class="float-shape shape-1"></span>
+          <span class="float-shape shape-2"></span>
+          <span class="float-shape shape-3"></span>
+          <span class="float-shape shape-4"></span>
+          <span class="float-shape shape-5"></span>
+          <span class="float-shape shape-6"></span>
+          <span class="float-shape shape-7"></span>
+          <span class="float-shape shape-8"></span>
+          <span class="float-blur blur-1"></span>
+          <span class="float-blur blur-2"></span>
+          <span class="float-blur blur-3"></span>
+        </div>
+
+        <div class="hero-card">
+          <h1>ELEVATE YOUR DESIGNS INTO CINEMATIC STORIES</h1>
+          <p>Transform static UI into dynamic video presentations with ease.</p>
+          <a class="hero-cta" id="get-started" href="./editor.html">Get Started For Free</a>
+        </div>
+      </section>
+
+      <section class="gallery" id="examples">
+        <h2>SHOWCASE GALLERY</h2>
+
+        <div class="gallery-grid">
+          <article class="showcase-card">
+            <div class="preview preview-mobile">
+              <div class="device-mobile">
+                <span class="device-notch"></span>
+                <div class="screen-ui">
+                  <div class="screen-glow"></div>
+                  <div class="screen-bar"></div>
+                  <div class="screen-card"></div>
+                  <div class="screen-button"></div>
+                </div>
+              </div>
+            </div>
+            <h3>MOBILE SHOWCASE</h3>
+            <a href="#">VIEW EXAMPLE</a>
+          </article>
+
+          <article class="showcase-card">
+            <div class="preview preview-desktop">
+              <div class="device-monitor">
+                <div class="monitor-screen">
+                  <div class="screen-header"></div>
+                  <div class="screen-hero">
+                    <span class="hero-dot"></span>
+                  </div>
+                  <div class="screen-pill"></div>
+                </div>
+                <div class="monitor-stand"></div>
+              </div>
+            </div>
+            <h3>WEB EXPERIENCE</h3>
+            <a href="#">VIEW EXAMPLE</a>
+          </article>
+
+          <article class="showcase-card">
+            <div class="preview preview-tablet">
+              <div class="device-tablet">
+                <div class="tablet-screen">
+                  <div class="tablet-topbar"></div>
+                  <div class="tablet-layout">
+                    <div class="tablet-copy">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="tablet-phone"></div>
+                  </div>
+                  <div class="tablet-pill"></div>
+                </div>
+              </div>
+            </div>
+            <h3>APP PRESENTATION</h3>
+            <a href="#">VIEW EXAMPLE</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing">
+        <div class="pricing-copy">
+          <p class="pricing-eyebrow">Flexible pricing</p>
+          <h2>Pricing for every stage of your showcase.</h2>
+          <p>
+            Start with polished presentation exports, then scale into branded cinematic stories,
+            team collaboration, and faster delivery workflows.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <p class="pricing-tier">Starter</p>
+            <div class="pricing-value">
+              <strong>$19</strong>
+              <span>/month</span>
+            </div>
+            <p class="pricing-summary">For solo creators building polished product walkthroughs.</p>
+            <ul class="pricing-list">
+              <li>3 showcase exports each month</li>
+              <li>Mobile, web, and app presentation layouts</li>
+              <li>Basic cinematic transitions</li>
+            </ul>
+            <a class="pricing-cta" href="./editor.html">Choose Starter</a>
+          </article>
+
+          <article class="pricing-card pricing-card-featured">
+            <p class="pricing-badge">Most popular</p>
+            <p class="pricing-tier">Pro Studio</p>
+            <div class="pricing-value">
+              <strong>$49</strong>
+              <span>/month</span>
+            </div>
+            <p class="pricing-summary">For designers and studios turning launches into premium stories.</p>
+            <ul class="pricing-list">
+              <li>Unlimited showcase exports</li>
+              <li>Brand styling and custom motion scenes</li>
+              <li>4K output and social-ready cutdowns</li>
+            </ul>
+            <a class="pricing-cta" href="./editor.html">Start Pro Studio</a>
+          </article>
+
+          <article class="pricing-card">
+            <p class="pricing-tier">Team</p>
+            <div class="pricing-value">
+              <strong>$99</strong>
+              <span>/month</span>
+            </div>
+            <p class="pricing-summary">For product teams shipping campaigns, decks, and launch assets together.</p>
+            <ul class="pricing-list">
+              <li>Shared workspace and review links</li>
+              <li>Team templates and reusable scenes</li>
+              <li>Priority rendering support</li>
+            </ul>
+            <a class="pricing-cta" href="./editor.html">Talk To Sales</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <nav aria-label="Footer">
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+      <p>&copy; <span data-year></span> Personal Showcase Studio</p>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

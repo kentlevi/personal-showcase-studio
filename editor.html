@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Personal Showcase Studio editor MVP for image-driven cinematic showcase previews."
+  >
+  <meta name="theme-color" content="#0a0607">
+  <title>Unified Workspace Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./editor.css">
+</head>
+<body>
+  <main class="editor-page">
+    <aside class="left-rail" aria-hidden="true">
+      <div class="rail-logo">
+        <span></span>
+      </div>
+      <div class="rail-item is-active">
+        <svg viewBox="0 0 24 24"><path d="M4.5 7.5A2.5 2.5 0 0 1 7 5h10a2.5 2.5 0 0 1 2.5 2.5v9A2.5 2.5 0 0 1 17 19H7a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M8 14l2.4-2.6a1 1 0 0 1 1.5 0L14 14l1.2-1.2a1 1 0 0 1 1.4 0L18 14.2"/></svg>
+      </div>
+      <div class="rail-item">
+        <svg viewBox="0 0 24 24"><path d="M12 4 4 8l8 4 8-4-8-4Z"/><path d="m4 12 8 4 8-4"/></svg>
+      </div>
+      <div class="rail-item">
+        <svg viewBox="0 0 24 24"><path d="M12 4v10"/><path d="m8 10 4 4 4-4"/><path d="M5 19h14"/></svg>
+      </div>
+      <div class="rail-footer"></div>
+    </aside>
+
+    <section class="editor-shell">
+      <aside class="sidebar-panel">
+        <header class="panel-header">
+          <div>
+            <h1 data-project-name>Unified Workspace Editor</h1>
+            <p>Personal Showcase Studio</p>
+          </div>
+          <a class="back-link" href="./index.html" aria-label="Back to landing page">
+            <svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/><path d="M9 12h8"/></svg>
+          </a>
+        </header>
+
+        <section class="panel-card">
+          <div class="card-title">
+            <h2>Images</h2>
+            <span data-asset-count>0</span>
+          </div>
+
+          <label class="import-button" for="image-input">
+            <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            Import New File
+          </label>
+          <input id="image-input" class="hidden-input" type="file" accept="image/*" multiple>
+
+          <div class="asset-list" data-asset-list>
+            <div class="asset-empty">Import one or more images to begin building your showcase.</div>
+          </div>
+        </section>
+
+        <section class="panel-card">
+          <div class="card-title">
+            <h2>Controls</h2>
+            <span class="card-kicker">Live</span>
+          </div>
+
+          <div class="setting-group">
+            <label for="radius-slider">Corner Radius</label>
+            <div class="range-stack">
+              <input id="radius-slider" type="range" min="0" max="64" step="1" value="24" data-radius-slider>
+              <strong data-radius-value>24px</strong>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <label>Animation Preset</label>
+            <div class="preset-grid">
+              <button class="preset-button is-active" type="button" data-animation="scroll">Scroll</button>
+              <button class="preset-button" type="button" data-animation="zoom">Zoom</button>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <label for="speed-slider">Speed</label>
+            <div class="range-stack">
+              <input id="speed-slider" type="range" min="0.5" max="2" step="0.1" value="1" data-speed-slider>
+              <strong data-speed-value>1.0x</strong>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <label>Status</label>
+            <p class="status-copy" data-status-copy>No image selected.</p>
+          </div>
+        </section>
+
+        <div class="sidebar-actions">
+          <button class="secondary-button" type="button" data-save-project>
+            <svg class="icon-inline" viewBox="0 0 24 24"><path d="M5 6a2 2 0 0 1 2-2h8l4 4v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M9 4v5h6"/></svg>
+            Save Project
+          </button>
+          <button class="secondary-button" type="button" data-toggle-preview>
+            <svg class="icon-inline" viewBox="0 0 24 24"><path d="M2.5 12s3.5-5.5 9.5-5.5S21.5 12 21.5 12s-3.5 5.5-9.5 5.5S2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            Preview Mode
+          </button>
+        </div>
+
+        <button class="primary-export" type="button" data-export-frame>
+          <svg class="icon-inline" viewBox="0 0 24 24"><path d="m8 6 10 6-10 6z"/></svg>
+          <span data-export-label>Export PNG Sequence</span>
+        </button>
+      </aside>
+
+      <section class="workspace">
+        <article class="viewer-panel">
+          <div class="viewer-header">
+            <div class="viewer-title">
+              <span></span>
+              <h2>Video Preview</h2>
+            </div>
+            <div class="viewer-meta">
+              <strong data-selected-name>No image selected</strong>
+            </div>
+          </div>
+
+          <div class="viewer-canvas">
+            <div class="preview-screen">
+              <div class="preview-browser">
+                <div class="browser-top">
+                  <span class="brand-mini"></span>
+                  <div class="browser-links">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="browser-actions">
+                    <span></span>
+                    <span class="accent"></span>
+                  </div>
+                </div>
+
+                <div class="browser-stage" data-preview-stage>
+                  <div class="browser-image-viewport" data-image-viewport>
+                    <img alt="" data-preview-image>
+                    <div class="browser-placeholder" data-preview-placeholder>
+                      <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="3"/><circle cx="9" cy="10" r="1.5"/><path d="m7 16 3.2-3.2a1 1 0 0 1 1.4 0L14 15l2.2-2.2a1 1 0 0 1 1.4 0L19 14"/></svg>
+                      <p data-preview-message>Import an image to preview your cinematic showcase.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="laptop-base"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-panel">
+          <div class="timeline-header">
+            <div class="viewer-title">
+              <span></span>
+              <h2>Playback Controls</h2>
+            </div>
+            <div class="timeline-actions">
+              <button class="playback-button" type="button" data-restart aria-label="Restart">
+                <svg viewBox="0 0 24 24"><path d="M7 7v4h4"/><path d="M17 17a6 6 0 1 1 0-8"/></svg>
+              </button>
+              <button class="playback-button playback-button-primary" type="button" data-toggle-play aria-label="Play or pause">
+                <svg viewBox="0 0 24 24" data-play-icon><path d="m9 7 8 5-8 5z"/></svg>
+                <svg viewBox="0 0 24 24" data-pause-icon hidden><path d="M9 7v10"/><path d="M15 7v10"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="timeline-body">
+            <div class="timeline-readout">
+              <span data-current-time>0.00s</span>
+              <span data-total-time>6.00s</span>
+            </div>
+
+            <div class="timeline-track">
+              <input class="timeline-slider" type="range" min="0" max="1" step="0.001" value="0" data-timeline-slider>
+              <div class="timeline-progress" data-timeline-progress></div>
+            </div>
+
+            <div class="timeline-labels">
+              <span>Start</span>
+              <span data-animation-label>Scroll preset</span>
+              <span>End</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./editor.js"></script>
+</body>
+</html>
