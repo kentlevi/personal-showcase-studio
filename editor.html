@@ -38,66 +38,151 @@
     <section class="editor-shell">
       <aside class="sidebar-panel">
         <header class="panel-header">
-          <div>
-            <h1 data-project-name>Unified Workspace Editor</h1>
-            <p>Personal Showcase Studio</p>
+          <div class="panel-header-top">
+            <div>
+              <h1 data-project-name>Unified Workspace Editor</h1>
+              <p>Personal Showcase Studio</p>
+            </div>
+            <a class="back-link" href="./index.html" aria-label="Back to landing page">
+              <svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/><path d="M9 12h8"/></svg>
+            </a>
           </div>
-          <a class="back-link" href="./index.html" aria-label="Back to landing page">
-            <svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/><path d="M9 12h8"/></svg>
-          </a>
         </header>
 
-        <section class="panel-card">
-          <div class="card-title">
-            <h2>Images</h2>
-            <span data-asset-count>0</span>
-          </div>
+        <section class="sidebar-section">
+          <header class="section-label">Images</header>
+          <section class="panel-card">
+            <div class="card-title">
+              <h2>Library</h2>
+              <span data-asset-count>0</span>
+            </div>
 
-          <label class="import-button" for="image-input">
-            <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
-            Import New File
-          </label>
-          <input id="image-input" class="hidden-input" type="file" accept="image/*" multiple>
+            <label class="import-button" for="image-input">
+              <svg class="icon-inline" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              Import New File
+            </label>
+            <input id="image-input" class="hidden-input" type="file" accept="image/*" multiple>
 
-          <div class="asset-list" data-asset-list>
-            <div class="asset-empty">Import one or more images to begin building your showcase.</div>
-          </div>
+            <div class="asset-list" data-asset-list>
+              <div class="asset-empty">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <p>Import one or more images to begin building your cinematic showcase.</p>
+              </div>
+            </div>
+          </section>
         </section>
 
-        <section class="panel-card">
-          <div class="card-title">
-            <h2>Controls</h2>
-            <span class="card-kicker">Live</span>
-          </div>
-
-          <div class="setting-group">
-            <label for="radius-slider">Corner Radius</label>
-            <div class="range-stack">
-              <input id="radius-slider" type="range" min="0" max="64" step="1" value="24" data-radius-slider>
-              <strong data-radius-value>24px</strong>
+        <section class="sidebar-section">
+          <header class="section-label">Controls</header>
+          <section class="panel-card">
+            <div class="card-title">
+              <h2>Adjustment</h2>
+              <span class="card-kicker">Live</span>
             </div>
-          </div>
 
-          <div class="setting-group">
-            <label>Animation Preset</label>
-            <div class="preset-grid">
-              <button class="preset-button is-active" type="button" data-animation="scroll">Scroll</button>
-              <button class="preset-button" type="button" data-animation="zoom">Zoom</button>
+            <div class="setting-group">
+              <label>Quick Presets</label>
+              <div class="preset-grid">
+                <button class="preset-button" type="button" data-apply-preset="websiteScroll">Website Scroll</button>
+                <button class="preset-button" type="button" data-apply-preset="heroZoom">Hero Zoom</button>
+                <button class="preset-button" type="button" data-apply-preset="mobileDemo">Mobile Demo</button>
+                <button class="preset-button" type="button" data-apply-preset="cinematicReveal">Cinematic Reveal</button>
+              </div>
             </div>
-          </div>
 
-          <div class="setting-group">
-            <label for="speed-slider">Speed</label>
-            <div class="range-stack">
-              <input id="speed-slider" type="range" min="0.5" max="2" step="0.1" value="1" data-speed-slider>
-              <strong data-speed-value>1.0x</strong>
+            <div class="setting-group">
+              <label>Device Frame</label>
+              <div class="preset-grid">
+                <button class="preset-button is-active" type="button" data-device-frame="browser">Browser</button>
+                <button class="preset-button" type="button" data-device-frame="laptop">Laptop</button>
+                <button class="preset-button" type="button" data-device-frame="phone">Phone</button>
+                <button class="preset-button" type="button" data-device-frame="frameless">Frameless</button>
+              </div>
             </div>
-          </div>
 
-          <div class="setting-group">
-            <label>Status</label>
-            <p class="status-copy" data-status-copy>No image selected.</p>
-          </div>
+            <div class="setting-group">
+              <label for="radius-slider">Corner Radius</label>
+              <div class="range-stack">
+                <input id="radius-slider" type="range" min="0" max="64" step="1" value="24" data-radius-slider>
+                <strong data-radius-value>24px</strong>
+              </div>
+            </div>
+
+            <div class="setting-group">
+              <label>Animation Preset</label>
+              <div class="preset-grid">
+                <button class="preset-button is-active" type="button" data-animation="scroll">Scroll</button>
+                <button class="preset-button" type="button" data-animation="zoom">Zoom</button>
+              </div>
+            </div>
+
+            <!-- Manual Scroll Pauses (Conditional) -->
+            <div class="setting-group" data-scroll-pauses-section hidden>
+              <div class="section-label" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--muted);">Manual Scroll Pauses</span>
+                <button class="secondary-button" type="button" data-add-pause style="padding: 2px 8px; font-size: 11px; border-radius: 6px;">+ Add Hold</button>
+              </div>
+              <div class="pause-list" data-pause-list style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- Pause items injected here -->
+              </div>
+               <p style="margin-top: 8px; font-size: 11px; color: var(--muted); line-height: 1.4;">
+                Hold the scroll at specific positions. Each pause includes 0.36s of cinematic deceleration and acceleration.
+              </p>
+            </div>
+
+            <div class="setting-group">
+              <label for="speed-slider">Speed</label>
+              <div class="range-stack">
+                <input id="speed-slider" type="range" min="0.5" max="2" step="0.1" value="1" data-speed-slider>
+                <strong data-speed-value>1.0x</strong>
+              </div>
+            </div>
+
+            <div class="setting-group">
+              <label>Cinematic Styling</label>
+              <div class="preset-grid">
+                <button class="preset-button" type="button" data-bg-mode="solid">Solid</button>
+                <button class="preset-button" type="button" data-bg-mode="gradient">Gradient</button>
+                <button class="preset-button is-active" type="button" data-bg-mode="glow">Glow</button>
+              </div>
+              <div class="preset-grid" style="margin-top: 8px;">
+                <button class="preset-button is-active" type="button" data-toggle-effect="vignette">Vignette</button>
+                <button class="preset-button is-active" type="button" data-toggle-effect="depth">Depth</button>
+              </div>
+            </div>
+
+            <div class="setting-group">
+              <label>Status</label>
+              <p class="status-copy" data-status-copy>No image selected.</p>
+            </div>
+          </section>
+        </section>
+
+        <section class="sidebar-section">
+          <header class="section-label">Export</header>
+          <section class="panel-card">
+            <div class="card-title">
+              <h2>Quality</h2>
+            </div>
+
+            <div class="setting-group">
+              <label>Resolution</label>
+              <div class="preset-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+                <button class="preset-button" type="button" data-export-resolution="720">720p</button>
+                <button class="preset-button is-active" type="button" data-export-resolution="1080">1080p</button>
+                <button class="preset-button" type="button" data-export-resolution="1440">1440p</button>
+              </div>
+            </div>
+
+            <div class="setting-group">
+              <label>Framerate</label>
+              <div class="preset-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+                <button class="preset-button" type="button" data-export-fps="24">24</button>
+                <button class="preset-button is-active" type="button" data-export-fps="30">30</button>
+                <button class="preset-button" type="button" data-export-fps="60">60</button>
+              </div>
+            </div>
+          </section>
         </section>
 
         <div class="sidebar-actions">
@@ -113,7 +198,7 @@
 
         <button class="primary-export" type="button" data-export-frame>
           <svg class="icon-inline" viewBox="0 0 24 24"><path d="m8 6 10 6-10 6z"/></svg>
-          <span data-export-label>Export PNG Sequence</span>
+          <span data-export-label>Export MP4 Video</span>
         </button>
       </aside>
 
@@ -131,32 +216,35 @@
 
           <div class="viewer-canvas">
             <div class="preview-screen">
-              <div class="preview-browser">
-                <div class="browser-top">
-                  <span class="brand-mini"></span>
-                  <div class="browser-links">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+              <div class="preview-device" data-active-device="browser">
+                <div class="device-hardware">
+                  <div class="browser-top">
+                    <span class="brand-mini"></span>
+                    <div class="browser-links">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="browser-actions">
+                      <span></span>
+                      <span class="accent"></span>
+                    </div>
                   </div>
-                  <div class="browser-actions">
-                    <span></span>
-                    <span class="accent"></span>
-                  </div>
+                  <div class="hardware-notch"></div>
                 </div>
 
-                <div class="browser-stage" data-preview-stage>
-                  <div class="browser-image-viewport" data-image-viewport>
+                <div class="device-stage" data-preview-stage>
+                  <div class="device-viewport" data-image-viewport>
                     <img alt="" data-preview-image>
-                    <div class="browser-placeholder" data-preview-placeholder>
+                    <div class="device-placeholder" data-preview-placeholder>
                       <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="3"/><circle cx="9" cy="10" r="1.5"/><path d="m7 16 3.2-3.2a1 1 0 0 1 1.4 0L14 15l2.2-2.2a1 1 0 0 1 1.4 0L19 14"/></svg>
                       <p data-preview-message>Import an image to preview your cinematic showcase.</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="laptop-base"></div>
+              <div class="laptop-base" data-device-stand></div>
             </div>
           </div>
         </article>
@@ -200,6 +288,6 @@
     </section>
   </main>
 
-  <script type="module" src="./editor.js"></script>
+  <script type="module" src="./editor.js?v=20240417"></script>
 </body>
 </html>
